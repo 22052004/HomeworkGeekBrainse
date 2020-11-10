@@ -7,7 +7,6 @@ public class Task {
         System.out.println(changeArray());
         System.out.println(fillDiagonal());
         System.out.println(MinimumAndMaximum());
-        System.out.println();
     }
     public static char[] invertArray() {
         System.out.println("Задание 1.");
