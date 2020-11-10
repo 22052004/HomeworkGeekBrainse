@@ -9,7 +9,7 @@ public class GuessTheNumber {
         Random numbers = new Random();
         int try3 = 0;
         int random = numbers.nextInt(9);
-        System.out.println("Угадайте число, у вас три попытки)");
+        System.out.println("Угадайте число, у вас три попытки!)");
         while (try3 < 3) {
             System.out.println("введи от 0 до 9: ");
             int number = input.nextInt();
