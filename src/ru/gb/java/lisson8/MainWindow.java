@@ -1,8 +1,6 @@
 package ru.gb.java.lisson8;
 import javax.swing.*;
-
 public class MainWindow extends JFrame {
-
     public MainWindow(){
         setTitle("Змейка");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -11,7 +9,6 @@ public class MainWindow extends JFrame {
         add(new GameField());
         setVisible(true);
     }
-
     public static void main(String[] args) {
         MainWindow mw = new MainWindow();
     }

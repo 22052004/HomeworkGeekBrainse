@@ -23,15 +23,11 @@ public class GameField extends JPanel implements ActionListener{
     private boolean up = false;
     private boolean down = false;
     private boolean inGame = true;
-
-
-    public GameField(){
+    public GameField() {
         setBackground(Color.black);
         loadImages();
         initGame();
-
     }
-
     public void initGame(){
         dots = 3;
         for (int i = 0; i < dots; i++) {
@@ -42,19 +38,16 @@ public class GameField extends JPanel implements ActionListener{
         timer.start();
         createApple();
     }
-
     public void createApple(){
         appleX = new Random().nextInt(20)*DOT_SIZE;
         appleY = new Random().nextInt(20)*DOT_SIZE;
     }
-
     public void loadImages(){
         ImageIcon iia = new ImageIcon("apple.png");
         apple = iia.getImage();
         ImageIcon iid = new ImageIcon("dot.png");
         dot = iid.getImage();
     }
-
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -65,7 +58,6 @@ public class GameField extends JPanel implements ActionListener{
             }
         }
     }
-
     public void move(){
         for (int i = dots; i > 0; i--) {
             x[i] = x[i-1];
@@ -82,7 +74,6 @@ public class GameField extends JPanel implements ActionListener{
             y[0] += DOT_SIZE;
         }
     }
-
     public void checkApple(){
         if(x[0] == appleX && y[0] == appleY){
             dots++;
@@ -96,7 +87,6 @@ public class GameField extends JPanel implements ActionListener{
                 inGame = false;
             }
         }
-
         if(x[0]>SIZE){
             inGame = false;
         }
@@ -110,21 +100,18 @@ public class GameField extends JPanel implements ActionListener{
             inGame = false;
         }
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if(inGame){
             checkApple();
             checkCollisions();
             move();
-
         }
         repaint();
     }
     class FildListenner extends KeyAdapter{
         @Override
         public void keyPressed(KeyEvent e){
-
         }
     }
 }
